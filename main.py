@@ -10,8 +10,7 @@ st.title("💰 Our Shared Ledger")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 # Read existing data
-df = conn.read(ttl="0") # ttl="0" ensures it fetches fresh data every time
-
+df = conn.read(worksheet="Sheet1", ttl="0")
 # --- INPUT FORM ---
 with st.expander("➕ Add New Expense"):
     with st.form("expense_form", clear_on_submit=True):
